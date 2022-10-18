@@ -6,14 +6,16 @@ import Blogs from './components/Blogs';
 function App() {
   const [click,setClick] = useState(0);
   return (
-    <div>
-    <Header />
-    <Blogs />
-    <p>You have clicked {click} times!
-    <button onClick={() => setClick(click+1)}>
-      Click Me
-    </button>
-    </p>
+    <div className="App">
+      <Header />
+      <div className='content'>
+        <Blogs />
+      </div>
+      <p>You have clicked {click} times!
+      <button onClick={() => setClick(click+1)}>
+        Click Me
+      </button>
+      </p>
     </div>
   );
 }

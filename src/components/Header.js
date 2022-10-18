@@ -3,9 +3,9 @@ import React from 'react';
 const Header = () => {
 
   return (
-    <div>
-      <h2>Official Website</h2>
-    </div>
+    <nav className="navbar">
+      <h1>Developer's Knowledge base</h1>
+    </nav>
   );
 };
 
