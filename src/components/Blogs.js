@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Blogs = () => {
@@ -24,15 +24,23 @@ const Blogs = () => {
     }
   ]);
 
+  const [ name, setName ]= useState('Guneet');
+
   const handleDelete = (id) => {
     const newBlogs = blogs.filter(blog => blog.id !== id);
     setBlogs(newBlogs);
   }
-
+  useEffect(() =>{
+    console.log('use effect ran!');
+    console.log(name);
+  }, [name]);// this does not run every time UI re-renders
+  //dependency added as to when run this function needs to run
 
   return (
     <div className='home'>
       <BlogList blogs={blogs} title="All Blogs" handleDelete={ handleDelete }/>
+      <button onClick={() => setName('Rekhi')}>change name</button>
+      <p>Edited by { name }</p>
     </div>
   );
 };
